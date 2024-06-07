@@ -5,7 +5,8 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Typography, Box, Divider, Button } from '@mui/material';
 import { useTheme } from '@emotion/react';
-import FirstSem from './sgpaItems/FirstSem';
+import { SemToCredits } from './sgpaItems/Credits';
+import Subjects from './sgpaItems/Subjects';
 
 
 const ITEM_HEIGHT = 48;
@@ -23,9 +24,12 @@ const MenuProps = {
 function Sgpa() {
   const theme = useTheme()
   const [sem, setSem] = React.useState(1);
+  const [selectedComponent, setSelectedComponent] = React.useState(1);
 
-  const handleChangeSem = (event, newValue) => {
+  const handleChangeSem = (event) => {
     setSem(event.target.value);
+    setSelectedComponent(event.target.value)
+    console.log(event.target.value)
   };
 
   const Semester = {
@@ -38,8 +42,18 @@ function Sgpa() {
     7: "7th Semester",
     8: "8th Semester",
   }
+  // const SemesterComponents = {
+  //   1: <FirstSem />,
+  //   2: ,
+  //   3: "3rd Semester",
+  //   4: "4th Semester",
+  //   5: "5th Semester",
+  //   6: "6th Semester",
+  //   7: "7th Semester",
+  //   8: "8th Semester",
+  // }
 
-  const RenderedComponent = Semester[sem] || null;
+  // const SelectedComponent = SemesterComponents[selectedComponent] || null;
   return (
     <>
       <Box sx={{
@@ -64,7 +78,7 @@ function Sgpa() {
           },
 
         }} size='small'>
-          <InputLabel id="demo-simple-select-asutowidth-label"
+          <InputLabel
             sx={{
               "&.Mui-focused": {
                 color: theme.palette.inputText.primary, // Change label color when focused
@@ -72,8 +86,8 @@ function Sgpa() {
               fontWeight: 'bold'
             }}>Select Semester</InputLabel>
           <Select
-            labelId="demo-simple-select-autowidth-label"
-            id="demo-simple-select-autowidth"
+            // labelId="demo-simple-select-autowidth-label"
+            // id="demo-simple-select-autowidth"
             value={sem}
             onChange={handleChangeSem}
             autoWidth
@@ -92,6 +106,10 @@ function Sgpa() {
             ))}
           </Select>
         </FormControl>
+        
+        <p>Total Credits : {SemToCredits[sem].totalCredits}</p>
+
+
         <Divider sx={{ m: 3, width: '100%' }} />
       </Box>
 
@@ -99,11 +117,14 @@ function Sgpa() {
 
 
       <Box sx={{ width: '100%', }}>
-        {}
-        {/* {sem === '1' ? <FirstSem /> : null} */}
-        {RenderedComponent && <RenderedComponent />}
+            <Subjects semName={sem}/>
       </Box>
-      <Box sx={{ mt: "50px" }}>
+      <Box sx={{
+        my: 5, width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
         <Button variant="contained"
           sx={{
             color: theme.palette.buttonText.primary,
