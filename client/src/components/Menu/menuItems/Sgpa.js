@@ -29,7 +29,6 @@ function Sgpa() {
   const handleChangeSem = (event) => {
     setSem(event.target.value);
     setSelectedComponent(event.target.value)
-    console.log(event.target.value)
   };
 
   const Semester = {
@@ -119,32 +118,7 @@ function Sgpa() {
       <Box sx={{ width: '100%', }}>
             <Subjects semName={sem}/>
       </Box>
-      <Box sx={{
-        my: 5, width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-        <Button variant="contained"
-          sx={{
-            color: theme.palette.buttonText.primary,
-            backgroundColor: theme.palette.buttonBG.primary,
-            borderRadius: "20px",
-            mr: "30px",
-            '&:hover': {
-              backgroundColor: theme.palette.buttonBG.hover,
-            },
-          }}>Submit</Button>
-        <Button variant="contained"
-          sx={{
-            color: theme.palette.buttonText.primary,
-            backgroundColor: theme.palette.buttonBG.primary,
-            borderRadius: "20px",
-            '&:hover': {
-              backgroundColor: theme.palette.buttonBG.hover,
-            },
-          }}>Clear</Button>
-      </Box>
+      
 
     </>
   );
