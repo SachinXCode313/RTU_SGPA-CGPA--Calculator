@@ -41,7 +41,7 @@ function Subjects({ semName }) {
         };
         setFormData(updatedFormData);
     };
-    
+
     const handleSubmit = () => {
         let totalGradePoints = 0
         let totalCreditPoints = SemToCredits[semName - 1].totalCredits
@@ -117,15 +117,6 @@ function Subjects({ semName }) {
                             },
 
                         }}>Submit</Button>
-                    <Button variant="contained"
-                        sx={{
-                            color: theme.palette.buttonText.primary,
-                            backgroundColor: theme.palette.buttonBG.primary,
-                            borderRadius: "20px",
-                            '&:hover': {
-                                backgroundColor: theme.palette.buttonBG.hover,
-                            },
-                        }}>Clear</Button>
                 </Box>
                 <p>Total SGPA : {result}</p>
             </Box>
