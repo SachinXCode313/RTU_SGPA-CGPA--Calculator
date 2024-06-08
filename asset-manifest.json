@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/RTU_SGPA-CGPA--Calculator/static/css/main.788608bf.css",
+    "main.js": "/RTU_SGPA-CGPA--Calculator/static/js/main.41c78ef7.js",
+    "static/media/grid.png": "/RTU_SGPA-CGPA--Calculator/static/media/grid.89ffab013a842356fd06.png",
+    "index.html": "/RTU_SGPA-CGPA--Calculator/index.html",
+    "main.788608bf.css.map": "/RTU_SGPA-CGPA--Calculator/static/css/main.788608bf.css.map",
+    "main.41c78ef7.js.map": "/RTU_SGPA-CGPA--Calculator/static/js/main.41c78ef7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.788608bf.css",
+    "static/js/main.41c78ef7.js"
+  ]
+}
