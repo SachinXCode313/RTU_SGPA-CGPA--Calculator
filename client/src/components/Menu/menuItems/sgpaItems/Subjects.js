@@ -87,7 +87,6 @@ function Subjects({ semName }) {
                                 label={subject}
                                 MenuProps={MenuProps}
                                 sx={{
-                                    color: 'black',
                                     '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
                                         borderColor: theme.palette.inputBorder.primary,
                                     },
