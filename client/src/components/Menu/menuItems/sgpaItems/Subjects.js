@@ -9,7 +9,7 @@ import { SemToCredits } from './Credits';
 import GradePoints from './GradesPoints';
 
 
-const ITEM_HEIGHT = 48;
+const ITEM_HEIGHT = 60;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
     PaperProps: {
@@ -27,7 +27,7 @@ function Subjects({ semName }) {
     const [sem, setSem] = useState(semName);
     const [formData, setFormData] = useState([]);
     const [grade, setGrade] = useState('')
-    const [result, setResult] = useState()
+    const [result, setResult] = useState(0)
 
     useEffect(() => {
         setFormData({})
@@ -71,10 +71,11 @@ function Subjects({ semName }) {
                             <InputLabel
                                 sx={{
                                     '&.Mui-focused': {
-                                        color: theme.palette.inputText.primary,
+                                        color: theme.palette.text.primary,
                                     },
                                     fontWeight: '200',
-                                    fontSize: '15px'
+                                    fontSize: '15px',
+                                    color: theme.palette.text.primary
                                 }}
                             >
                                 {subject} (Credits: {credits})
@@ -86,6 +87,7 @@ function Subjects({ semName }) {
                                 label={subject}
                                 MenuProps={MenuProps}
                                 sx={{
+                                    color: 'black',
                                     '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
                                         borderColor: theme.palette.inputBorder.primary,
                                     },
@@ -100,7 +102,7 @@ function Subjects({ semName }) {
                     ))
                 }
                 <Box sx={{
-                    my: 5, width: '100%',
+                    my: 3, width: '100%',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -111,7 +113,7 @@ function Subjects({ semName }) {
                             color: theme.palette.buttonText.primary,
                             backgroundColor: theme.palette.buttonBG.primary,
                             borderRadius: "20px",
-                            mr: "30px",
+                            width: "150px",
                             '&:hover': {
                                 backgroundColor: theme.palette.buttonBG.hover,
                             },
