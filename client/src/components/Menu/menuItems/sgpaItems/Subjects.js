@@ -15,12 +15,11 @@ const MenuProps = {
     PaperProps: {
         style: {
             maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-            width: 350,
-
+            maxWidth: 360,
+            width: 400,
         },
     },
 };
-
 
 function Subjects({ semName }) {
     const theme = useTheme()
@@ -70,12 +69,12 @@ function Subjects({ semName }) {
                         <FormControl key={subject} sx={{ mt: 3, width: { xs: '90%', sm: '80%', md: '70%', lg: '60%', xl: '70%' } }} size='small'>
                             <InputLabel
                                 sx={{
+                                    color : theme.palette.text.primary,
                                     '&.Mui-focused': {
                                         color: theme.palette.text.primary,
                                     },
                                     fontWeight: '200',
                                     fontSize: '15px',
-                                    color: theme.palette.text.primary
                                 }}
                             >
                                 {subject} (Credits: {credits})
@@ -91,6 +90,7 @@ function Subjects({ semName }) {
                                         borderColor: theme.palette.inputBorder.primary,
                                     },
                                     height: '50px',
+                                    
                                 }}
                             >
                                 {Object.entries(GradePoints).map(([grade]) => (

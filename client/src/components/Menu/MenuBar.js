@@ -38,7 +38,7 @@ const MenuBar = () => {
           sm: '80%',  // Set width to 80% for small screens
           md: '70%',  // Set width to 70% for medium screens
           lg: '60%',  // Set width to 60% for large screens
-          xl: '30%',  // Set width to 50% for extra-large screens
+          xl: '40%',  // Set width to 50% for extra-large screens
         },
         maxWidth: 'xxl',
         display: 'flex',
